@@ -4,22 +4,20 @@ import csv
 
 def get_information(pokemon: str):
     url = "https://pokeapi.co/api/v2/pokemon/"
-
     request = requests.get((url + pokemon))
-
     key_information = json.loads(request.text)
-
     return key_information
+
+print(get_information("Bulbasaur")["id"])
 
 def json_create(pokemon: str):
     pokemon_info = get_information(pokemon)
     json.dump(pokemon_info, open("pokemon.json", "w"))
 
-
 def key_information_parsing(pokemon: str):
     pokemon_info = get_information(pokemon)
     id = pokemon_info["id"]
-    name = pokemon_info["name"]
+    name = pokemon_info["name"].capitalize()
     base_experience = pokemon_info["base_experience"]
     height = pokemon_info["height"]
     is_default = pokemon_info["is_default"]
@@ -45,5 +43,5 @@ def create_csv(pokemon: list):
     with open("pokemon.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(header)
-        for pokemon in pokemon:
-            writer.writerow(key_information_parsing(pokemon))
+        for each in pokemon:
+            writer.writerow(key_information_parsing(each))
