@@ -8,8 +8,6 @@ def get_information(pokemon: str):
     key_information = json.loads(request.text)
     return key_information
 
-print(get_information("Bulbasaur")["id"])
-
 def json_create(pokemon: str):
     pokemon_info = get_information(pokemon)
     json.dump(pokemon_info, open("pokemon.json", "w"))
