@@ -8,10 +8,6 @@ def get_information(pokemon: str):
     key_information = json.loads(request.text)
     return key_information
 
-def json_create(pokemon: str):
-    pokemon_info = get_information(pokemon)
-    json.dump(pokemon_info, open("pokemon.json", "w"))
-
 def key_information_parsing(pokemon: str):
     pokemon_info = get_information(pokemon)
     id = pokemon_info["id"]
