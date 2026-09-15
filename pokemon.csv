@@ -1,0 +1,10 @@
+id,name,base_experience,height,is_default,order,weight,abilities
+1,Bulbasaur,64,7,True,1,69,"Overgrow, Chlorophyll"
+2,Ivysaur,142,10,True,2,130,"Overgrow, Chlorophyll"
+3,Venusaur,236,20,True,3,1000,"Overgrow, Chlorophyll"
+4,Charmander,62,6,True,5,85,"Blaze, Solar power"
+5,Charmeleon,142,11,True,6,190,"Blaze, Solar power"
+6,Charizard,240,17,True,7,905,"Blaze, Solar power"
+7,Squirtle,63,5,True,10,90,"Torrent, Rain dish"
+8,Wartortle,142,10,True,11,225,"Torrent, Rain dish"
+9,Blastoise,239,16,True,12,855,"Torrent, Rain dish"
