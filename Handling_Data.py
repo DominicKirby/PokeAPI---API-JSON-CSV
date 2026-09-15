@@ -25,10 +25,23 @@ def key_information_parsing(pokemon: str):
     is_default = pokemon_info["is_default"]
     order = pokemon_info["order"]
     weight = pokemon_info["weight"]
-    return [id, name, base_experience, height, is_default, order, weight]
+
+    abilities = pokemon_info["abilities"]
+    all_abilities = ""
+    for ability in abilities:
+        ability_name = ability["ability"]["name"]
+        ability_name = ability_name.capitalize()
+        ability_name = ability_name.replace("-", " ")
+
+        if all_abilities == "":
+            all_abilities = ability_name
+        else:
+            all_abilities += ", " + ability_name
+
+    return [id, name, base_experience, height, is_default, order, weight, all_abilities]
 
 def create_csv(pokemon: list):
-    header = ["id", "name", "base_experience", "height", "is_default", "order", "weight"]
+    header = ["id", "name", "base_experience", "height", "is_default", "order", "weight", "abilities"]
     with open("pokemon.csv", "w", newline="") as csvfile:
         writer = csv.writer(csvfile)
         writer.writerow(header)
