@@ -1,4 +1,5 @@
 id,name,base_experience,height,is_default,order,weight
 63,abra,62,9,True,103,195
 4,charmander,62,6,True,5,85
+7,squirtle,63,5,True,10,90
 132,ditto,101,3,True,214,40

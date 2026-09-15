@@ -1,7 +1,15 @@
-from Pulling_data import *
+import requests
+import json
 import csv
 
-test_json = get_information("ditto")
+def get_information(pokemon: str):
+    url = "https://pokeapi.co/api/v2/pokemon/"
+
+    request = requests.get((url + pokemon))
+
+    key_information = json.loads(request.text)
+
+    return key_information
 
 def json_create(pokemon: str):
     pokemon_info = get_information(pokemon)
@@ -17,12 +25,7 @@ def key_information_parsing(pokemon: str):
     is_default = pokemon_info["is_default"]
     order = pokemon_info["order"]
     weight = pokemon_info["weight"]
-
     return [id, name, base_experience, height, is_default, order, weight]
-
-
-print(key_information_parsing("ditto"))
-
 
 def create_csv(pokemon: list):
     header = ["id", "name", "base_experience", "height", "is_default", "order", "weight"]
@@ -31,7 +34,3 @@ def create_csv(pokemon: list):
         writer.writerow(header)
         for pokemon in pokemon:
             writer.writerow(key_information_parsing(pokemon))
-
-pokemon_list = ["abra", "charmander", "ditto"]
-
-create_csv(pokemon_list)
