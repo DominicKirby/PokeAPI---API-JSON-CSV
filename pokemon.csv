@@ -8,3 +8,6 @@ id,name,base_experience,height,is_default,order,weight,abilities
 7,Squirtle,63,5,True,10,90,"Torrent, Rain dish"
 8,Wartortle,142,10,True,11,225,"Torrent, Rain dish"
 9,Blastoise,239,16,True,12,855,"Torrent, Rain dish"
+133,Eevee,65,3,True,215,65,"Run away, Adaptability, Anticipation"
+129,Magikarp,40,9,True,210,100,"Swift swim, Rattled"
+150,Mewtwo,306,20,True,245,1220,"Pressure, Unnerve"

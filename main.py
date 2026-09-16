@@ -32,6 +32,7 @@ while application:
         # Giving the user the ability to clear the current csv file
         elif old_list[0].lower() == "clear":
             pokemon_list.clear()
+            create_csv([])
             print("List cleared")
 
         # Adding the new pokemon to the pre-existing list and csv file
