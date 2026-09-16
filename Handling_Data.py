@@ -65,13 +65,19 @@ def create_csv(pokemon: list):
     """
     Creating csv from the data we have parsed previously
     """
-
     # Headers of the csv
     header = ["id", "name", "base_experience", "height", "is_default", "order", "weight", "abilities"]
 
-    # Adding the new row to the csv for that pokemon using the previous function
-    with open("pokemon.csv", "w", newline="") as csvfile:
-        writer = csv.writer(csvfile)
-        writer.writerow(header)
-        for each in pokemon:
-            writer.writerow(key_information_parsing(each))
+    if pokemon == [""]:
+        with open("pokemon.csv", "w", newline="") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(header)
+            for each in pokemon:
+                writer.writerow(key_information_parsing(each))
+    else:
+        # Adding the new row to the csv for that pokemon using the previous function
+        with open("pokemon.csv", "w", newline="") as csvfile:
+            writer = csv.writer(csvfile)
+            writer.writerow(header)
+            for each in pokemon:
+                writer.writerow(key_information_parsing(each))
