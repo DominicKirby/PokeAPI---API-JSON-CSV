@@ -24,6 +24,7 @@ def key_information_parsing(pokemon: str):
     Parses the key pokemon information from the JSON recieved from the get_information functions, takes json input and
     gives output including id, name, base_experience, height, is_default, order, weight, and names of abilities
     """
+
     # Using API to get pokemon information
     pokemon_info = get_information(pokemon)
 
@@ -55,7 +56,7 @@ def key_information_parsing(pokemon: str):
         else:
             all_abilities += ", " + ability_name
 
-    # Returining all key information
+    # Returning all key information
     return [id, name, base_experience, height, is_default, order, weight, all_abilities]
 
 
